@@ -10,7 +10,7 @@ class ArgMode(Enum):
     FILE = "file"
 
 
-def create_file(*args):
+def create_file(*args) -> None:
     curr_path = ""
     file_name = ""
     curr_switch = ArgMode.NONE
@@ -44,11 +44,11 @@ def create_file(*args):
 
             count = 0
             while True:
-                newLine = input("Enter content line: ")
-                if newLine == "stop":
+                new_line = input("Enter content line: ")
+                if new_line == "stop":
                     break
                 count += 1
-                file.write(f"{count} {newLine}\n")
+                file.write(f"{count} {new_line}\n")
 
 
-create_file(*sys.argv[1:]) 
+create_file(*sys.argv[1:])
